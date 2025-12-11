@@ -1,0 +1,159 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+
+  /* Warna solid asli (ungu DigiRead) */
+  background: #7A5CFA;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TOP BAR */
+.top-bar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.back-arrow {
+  background: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #7A5CFA;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* LOGO */
+.logo-section {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.logo-img {
+  width: 110px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+}
+
+/* CARD FORM */
+.main-form {
+  width: 88%;
+  max-width: 420px;
+
+  background: white;
+  padding: 26px;
+  border-radius: 22px;
+
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* INPUT */
+.main-form input {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  color: #333;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.main-form input::placeholder {
+  color: #777;
+}
+
+.main-form input:focus {
+  border-color: #7A5CFA;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(122,92,250,0.25);
+}
+
+/* MAIN BUTTON */
+.main-btn {
+  padding: 14px;
+  background: #7A5CFA;
+  color: #fff;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.main-btn:active {
+  transform: scale(0.97);
+}
+
+/* SOCIAL */
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 12px 0;
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn img {
+  width: 22px;
+}
+
+/* LINKS */
+.register-row,
+.forgot-row {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-link,
+.forgot-link {
+  color: #7A5CFA;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* FORM SWITCH */
+.form-login,
+.form-reset {
+  display: none;
+}
+
+#toggle-login:checked ~ .form-register { display: none; }
+#toggle-login:checked ~ .form-login { display: flex; }
+
+#toggle-reset:checked ~ .form-login { display: none; }
+#toggle-reset:checked ~ .form-reset { display: flex; }

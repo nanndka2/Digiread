@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akun — DigiBook</title>
+  <link rel="stylesheet" href="css/account.css" />
+</head>
+<body>
+  <header class="top-bar"></header>
+  
+  <div class="container">
+    <div class="profile-card">
+      <div class="profile-left">
+        <img class="profile-img" src="img/windah-basudara.png" alt="Foto Profil" />
+      </div>
+      <div class="profile-center">
+        <div class="profile-name">Windah Batubara</div>
+        <div class="profile-role">Premium Member</div>
+        <div class="profile-bio">Pembaca setia & kurator rekomendasi. Suka cerita lokal dan biografi.</div>
+      </div>
+      <div class="profile-right">
+        <a class="edit-btn" href="#">Edit</a>
+      </div>
+    </div>
+
+    <div class="menu-tabs">
+      <input type="radio" name="tab" id="tab-profile" checked>
+      <input type="radio" name="tab" id="tab-mylist">
+      <input type="radio" name="tab" id="tab-setting">
+      <input type="radio" name="tab" id="tab-download">
+      <input type="radio" name="tab" id="tab-logout">
+      <div class="menu">
+        <label class="menu-item" for="tab-profile"><span class="icon">👤</span> Profile</label>
+        <label class="menu-item" for="tab-mylist"><span class="icon">⭐</span> My List</label>
+        <label class="menu-item" for="tab-setting"><span class="icon">⚙️</span> Setting</label>
+        <label class="menu-item" for="tab-download"><span class="icon">⬇️</span> Download</label>
+        <label class="menu-item logout" for="tab-logout"><span class="icon">🚪</span> Logout</label>
+      </div>
+
+      <div class="panels">
+        <div class="panel panel-profile">
+          <h2>Profil Saya</h2>
+          <ul class="profile-list">
+            <li><strong>Nama:</strong> Windah Batubara</li>
+            <li><strong>Username:</strong> windahbatubara</li>
+            <li><strong>Email:</strong> windah.batubara@email
+            </li>
+            <li><strong>Phone:</strong> +62 812-3456-7890</li>
+            <li><strong>Birthday:</strong> 14 Maret 1992</li>
+            <li><strong>Status:</strong> <span class="badge premium">Premium</span></li>
+          </ul>
+        </div>
+
+        <div class="panel panel-mylist">
+          <h2>My List</h2>
+          <div class="mylist-wrapper">
+            <div class="list-item"><span class="list-icon">📚</span>
+              <div><div class="list-title">Productive Habits</div><div class="list-desc">Progress: <span class="badge inprogress">36%</span></div></div>
+            </div>
+            <div class="list-item"><span class="list-icon">🎬</span>
+              <div><div class="list-title">The Creator (Film)</div><div class="list-desc">Status: <span class="badge completed">Selesai</span></div></div>
+            </div>
+            <div class="list-item-empty">Tambah kesukaanmu ke My List ✨</div>
+          </div>
+        </div>
+
+        <div class="panel panel-setting">
+          <h2>Pengaturan</h2>
+          <div class="setting-form">
+            <div class="setting-row"><label>Dark Mode</label><span class="switch" aria-hidden="true"></span></div>
+            <div class="setting-row"><label>Ganti Password</label><button disabled>Ubah</button></div>
+            <div class="setting-row"><label>Bahasa</label><select disabled><option>ID</option><option>EN</option></select></div>
+          </div>
+          <p class="setting-info">Fitur pengaturan akan aktif setelah login di web.</p>
+        </div>
+
+        <div class="panel panel-download">
+          <h2>Download</h2>
+          <ul class="download-list">
+            <li><strong>Productive Habits.pdf</strong><span class="badge completed">Selesai</span></li>
+            <li><strong>The Creator.mp4</strong><span class="badge queued">Menunggu</span></li>
+            <li class="download-empty">Belum ada file yang didownload.</li>
+          </ul>
+        </div>
+
+        <div class="panel panel-logout">
+          <h2>Logout</h2>
+          <div class="logout-box">
+            <div class="logout-msg">Yakin ingin keluar? (tombol hanya demo)</div>
+            <button class="logout-btn" disabled>Keluar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Navigasi bawah">
+    <a href="page-home.html"><img src="img/icon-home.svg" alt=""><span>HOME</span></a>
+    <a href="favorite-books.html"><img src="img/icon-favorite.svg" alt=""><span>FAVORITE</span></a>
+    <a href="search-page.html"><img src="img/icon-search.svg" alt=""><span>SEARCH</span></a>
+    <a href="page-new-book.html"><img src="img/icon-view.svg" alt=""><span>NEW</span></a>
+    <a href="account.html" class="active"><img src="img/icon-account.svg" alt=""><span>ACCOUNT</span></a>
+  </nav>
+</body>
+</html>

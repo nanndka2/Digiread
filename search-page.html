@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pencarian — DigiBook</title>
+  <link rel="stylesheet" href="css/search-page.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <a href="page-home.html" class="back-btn" aria-label="Kembali">&#8592;</a>
+    <div class="header-content">
+      <h1 class="page-title">Pencarian</h1>
+      <p class="subtitle">Temukan buku yang kamu butuhkan</p>
+      <form class="search-row" role="search" aria-label="Cari buku">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="search" placeholder="Cari judul, penulis, atau kata kunci..." aria-label="Pencarian Buku">
+        <button type="submit" class="search-btn" aria-label="Cari">Cari</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section popular">
+      <div class="section-header">
+        <h2>Sedang Populer</h2>
+        <a href="page-home.html" class="view-all">Lihat semua</a>
+      </div>
+      <div class="popular-scroll" role="list">
+        <a class="popular-item" href="page-detail-berjuta-rasanya.html" role="listitem">
+          <img src="img/berjuta-rasanya.jpg" alt="Berjuta Rasanya">
+          <div class="p-meta"><div class="p-title">Berjuta Rasanya</div><div class="p-author">Tere Liye</div></div>
+        </a>
+        <a class="popular-item" href="page-detail-timun-jelita.html" role="listitem">
+          <img src="img/timun-jelita.jpg" alt="Timun Jelita">
+          <div class="p-meta"><div class="p-title">Timun Jelita</div><div class="p-author">Raditya Dika</div></div>
+        </a>
+        <a class="popular-item" href="page-detail-diary-of-canva.html" role="listitem">
+          <img src="img/diary-of-canva.jpg" alt="Diary of Canva">
+          <div class="p-meta"><div class="p-title">Diary of Canva</div><div class="p-author">Itakrn</div></div>
+        </a>
+        <a class="popular-item" href="page-detail-dinosaurus.html" role="listitem">
+          <img src="img/ensiklopedia-dinosaurus-super-wow.jpg" alt="Ensiklopedia Dinosaurus Super Wow">
+          <div class="p-meta"><div class="p-title">Ensiklopedia Dinosaurus Super Wow</div><div class="p-author">Mahadewa Adi Seta</div></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section categories">
+      <div class="section-header">
+        <h2>Kategori Buku</h2>
+        <span class="hint">Telusuri berdasarkan topik</span>
+      </div>
+
+      <div class="category-grid">
+        <a href="kategori-top.html" class="category-link" aria-label="TOP Ranking">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">TOP Ranking</span>
+              <span class="cat-sub">Buku terpopuler</span>
+            </div>
+            <img src="img/akademi ouranus.png" alt="TOP Ranking">
+          </div>
+        </a>
+
+        <a href="kategori-new.html" class="category-link" aria-label="New Releases">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">New</span>
+              <span class="cat-sub">Baru dirilis</span>
+            </div>
+            <img src="img/aku-sayang-binatang.webp" alt="New">
+          </div>
+        </a>
+
+        <a href="kategori-pelajaran.html" class="category-link" aria-label="Buku Pelajaran">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">Buku Pelajaran</span>
+              <span class="cat-sub">Belajar mudah</span>
+            </div>
+            <img src="img/bahasa-indonesia.webp" alt="Buku Pelajaran">
+          </div>
+        </a>
+
+        <a href="kategori-novel.html" class="category-link" aria-label="Novel">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">Novel</span>
+              <span class="cat-sub">Cerita panjang</span>
+            </div>
+            <img src="img/dear-hyun-nam.jpg" alt="Novel">
+          </div>
+        </a>
+
+        <a href="kategori-cerita-rakyat.html" class="category-link" aria-label="Cerita Rakyat">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">Cerita Rakyat</span>
+              <span class="cat-sub">Klasik & lokal</span>
+            </div>
+            <img src="img/si-kelingking.jpg" alt="Cerita Rakyat">
+          </div>
+        </a>
+
+        <a href="kategori-ensiklopedia.html" class="category-link" aria-label="Ensiklopedia">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">Ensiklopedia</span>
+              <span class="cat-sub">Pengetahuan luas</span>
+            </div>
+            <img src="img/sains.png" alt="Ensiklopedia">
+          </div>
+        </a>
+
+        <a href="kategori-anak.html" class="category-link" aria-label="Buku Anak">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">Buku Anak</span>
+              <span class="cat-sub">Seru & edukatif</span>
+            </div>
+            <img src="img/buku-anak-pintar.jpg" alt="Buku Anak">
+          </div>
+        </a>
+
+        <a href="kategori-biografi.html" class="category-link" aria-label="Biografi">
+          <div class="category-card">
+            <div class="cat-content">
+              <span class="cat-title">Biografi</span>
+              <span class="cat-sub">Kisah nyata</span>
+            </div>
+            <img src="img/tan malaka.png" alt="Biografi">
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navigasi bawah">
+    <a href="page-home.html"><img src="img/icon-home.svg" alt=""><span>HOME</span></a>
+    <a href="favorite-books.html"><img src="img/icon-favorite.svg" alt=""><span>FAVORITE</span></a>
+    <a href="search-page.html" class="active"><img src="img/icon-search.svg" alt=""><span>SEARCH</span></a>
+    <a href="page-new-book.html"><img src="img/icon-view.svg" alt=""><span>NEW</span></a>
+    <a href="account.html"><img src="img/icon-account.svg" alt=""><span>ACCOUNT</span></a>
+  </nav>
+</body>
+</html>

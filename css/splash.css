@@ -1,0 +1,49 @@
+/* Reset ringan */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Splash Container */
+.splash-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #8e6cff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Logo */
+.splash-logo {
+  width: 100px;
+  margin-bottom: 14px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Title */
+.splash-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Animasi sederhana & web-friendly */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
