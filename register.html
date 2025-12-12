@@ -37,39 +37,83 @@
     </div>
   </form>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.querySelector(".register-form");
-        const email = form.querySelector("input[name='email']");
-        const username = form.querySelector("input[name='username']");
-        const password = form.querySelector("input[name='password']");
-        const button = form.querySelector(".main-btn");
+ <script>
+  // Toggle password visibility
+  const eyeOpen = document.getElementById('eyeOpen');
+  const eyeClosed = document.getElementById('eyeClosed');
 
-        form.addEventListener("submit", function (e) {
+  document.getElementById('togglePassword').addEventListener('click', function (e) {
+    e.preventDefault();
+    const passwordField = document.getElementById('password');
 
-            if (email.value.trim() === "") {
-                e.preventDefault();
-                alert("Email / No. Telp tidak boleh kosong.");
-                return;
-            }
+    if (passwordField.type === 'password') {
+      passwordField.type = 'text';
+      eyeOpen.style.display = 'none';
+      eyeClosed.style.display = '';
+    } else {
+      passwordField.type = 'password';
+      eyeOpen.style.display = '';
+      eyeClosed.style.display = 'none';
+    }
+  });
 
-            if (username.value.trim().length < 3) {
-                e.preventDefault();
-                alert("Nama pengguna minimal 3 karakter.");
-                return;
-            }
+  // Register process using localStorage
+  document.getElementById('signinBtn').addEventListener('click', function () {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const email = document.getElementById('email').value.trim();
 
-            if (password.value.trim().length < 6) {
-                e.preventDefault();
-                alert("Kata sandi minimal 6 karakter.");
-                return;
-            }
+    // Validasi username
+    if (username.length < 8 || username.length > 20) {
+      alert('Username harus terdiri dari 8 - 20 karakter!');
+      document.getElementById('username').focus();
+      return;
+    }
 
-            button.disabled = true;
-            button.textContent = "Memproses...";
-        });
-    });
-  </script>
+    // Validasi password
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    if (!passwordRegex.test(password)) {
+      alert('Password minimal 8 karakter, mengandung huruf besar, angka, dan simbol!');
+      document.getElementById('password').focus();
+      return;
+    }
+
+    // Validasi email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Format email tidak valid!');
+      document.getElementById('email').focus();
+      return;
+    }
+
+    // Ambil data akun sebelumnya
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Cek apakah username atau email sudah ada
+    const existingUser = users.find(
+      user => user.username === username || user.email === email
+    );
+
+    if (existingUser) {
+      alert('Username atau email sudah digunakan!');
+      return;
+    }
+
+    // Simpan akun baru
+    const newUser = {
+      username: username,
+      password: password, // plaintext, untuk project sekolah masih oke
+      email: email
+    };
+
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert('Akun berhasil dibuat!');
+    window.location.href = 'sign in.html';
+  });
+</script>
+
 
 </body>
 </html>
