@@ -2,7 +2,6 @@
 body {font-family: Arial, sans-serif; background:#f0f7ff; margin:0; padding:0; display:flex; flex-direction:column; align-items:center;}
 .top-bar {width:100%; padding:10px; background:#fff; display:flex; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);}    
 .back-arrow {border:none; background:none; font-size:24px; cursor:pointer;}
-.background: #7A5CFA;
 .logo-section {margin:20px 0;}
 .logo-img {width:120px;}
 .reset-form {width:85%; max-width:350px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.15);} 
