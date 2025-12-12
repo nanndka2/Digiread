@@ -1,11 +1,149 @@
-/* CSS khusus halaman Daftar */
-body {font-family: Arial, sans-serif; background:#eef2f7; margin:0; padding:0; display:flex; flex-direction:column; align-items:center;}
-.top-bar {width:100%; padding:10px; background:#fff; display:flex; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);}    
-.back-arrow {border:none; background:none; font-size:24px; cursor:pointer;}
-.logo-section {margin:20px 0;}
-.logo-img {width:120px;}
-.register-form {width:85%; max-width:350px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.15);} 
-.register-form input {width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:6px;}
-.register-btn {width:100%; padding:10px; margin-top:10px; background:#28a745; border:none; color:white; border-radius:6px; cursor:pointer;}
-.login-link-row {text-align:center; margin-top:10px;}
-.login-link {color:#28a745; cursor:pointer; font-weight:bold; text-decoration:none;}
+/* ===== Global Page Layout ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== Top Bar ===== */
+.top-bar {
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.back-arrow {
+  border: none;
+  background: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s;
+}
+
+.back-arrow:hover {
+  color: #007bff;
+}
+
+/* ===== Logo Section ===== */
+.logo-section {
+  margin: 30px 0 20px;
+}
+
+.logo-img {
+  width: 140px;
+  filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
+}
+
+/* ===== Register Form Container ===== */
+.register-form {
+  width: 88%;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  animation: fadeIn 0.3s ease;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* ===== Input Fields ===== */
+.register-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.register-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+/* ===== Register Button ===== */
+.main-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 12px;
+  background: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.main-btn:hover {
+  background: #005fcc;
+}
+
+/* ===== Social Buttons ===== */
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.social-btn:hover {
+  background: #eaeaea;
+}
+
+.social-btn img {
+  width: 32px;
+}
+
+/* ===== Navigation to Login ===== */
+.register-row {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #444;
+}
+
+.register-link {
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.register-link:hover {
+  color: #005fcc;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
