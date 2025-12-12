@@ -23,4 +23,13 @@
 
   <script src="js/auth.js"></script>
 </body>
+  <script>
+    if (document.getElementById('form-reset')) {
+document.getElementById('form-reset').addEventListener('submit', function(e) {
+e.preventDefault();
+alert('Link reset telah dikirim (simulasi).');
+window.location.href = 'login.html';
+});
+}
+  </script>
 </html>
