@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — DigiRead</title>
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <button class="back-arrow" onclick="history.back()">&#8592;</button>
+  </div>
+
+  <div class="logo-section">
+    <img src="img/logo digiread.png" class="logo-img" />
+  </div>
+
+  <form class="main-form" id="form-login">
+    <h3 class="form-title">Masuk</h3>
+    <input type="text" id="login-email" placeholder="No Telp / Email" required>
+    <input type="password" id="login-password" placeholder="Kata Sandi" required>
+
+    <div class="forgot-row"><a href="reset.html" class="forgot-link">Lupa Sandi?</a></div>
+
+    <div class="social-row">
+      <button type="button" class="social-btn"><img src="img/google.png"></button>
+      <button type="button" class="social-btn"><img src="img/facebook.png"></button>
+    </div>
+
+    <button type="submit" class="main-btn">Masuk</button>
+    <div class="register-row">Belum punya akun? <a href="register.html" class="register-link">Daftar</a></div>
+  </form>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
