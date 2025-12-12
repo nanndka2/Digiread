@@ -33,4 +33,29 @@
 
   <script src="js/auth.js"></script>
 </body>
+  <script>if (document.getElementById('form-login')) {
+document.getElementById('form-login').addEventListener('submit', function(e) {
+e.preventDefault();
+const email = document.getElementById('login-email').value;
+const password = document.getElementById('login-password').value;
+
+
+const user = JSON.parse(localStorage.getItem('digiread_user'));
+
+
+if (!user) {
+alert('Akun tidak ditemukan. Daftar terlebih dahulu.');
+return;
+}
+
+
+if (email === user.email && password === user.password) {
+alert('Login berhasil.');
+window.location.href = 'dashboard.html';
+} else {
+alert('Email atau kata sandi salah.');
+}
+});
+}
+  </script>
 </html>
