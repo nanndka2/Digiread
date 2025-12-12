@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reset Kata Sandi — DigiRead</title>
-  <link rel="stylesheet" href="css/reset.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiRead — Reset Kata Sandi</title>
+  <link rel="stylesheet" href="css/reset.css">
 </head>
+
 <body>
+
   <div class="top-bar">
     <button class="back-arrow" onclick="history.back()">&#8592;</button>
   </div>
 
   <div class="logo-section">
-    <img src="img/logo digiread.png" class="logo-img" />
+    <img src="img/logo-digiread.png" class="logo-img" alt="DigiRead Logo">
   </div>
 
-  <form class="main-form" id="form-reset">
+  <form class="reset-form" action="api/reset_request.php" method="POST">
     <h3 class="form-title">Reset Kata Sandi</h3>
-    <input type="text" id="reset-email" placeholder="Masukkan Email" required>
+
+    <input type="text" name="email" placeholder="Masukkan Email" required>
+
     <button type="submit" class="main-btn">Kirim</button>
+
+    <div class="register-row">
+      Ingat kata sandi?  
+      <a href="login.html" class="register-link">Masuk</a>
+    </div>
   </form>
 
-  <script src="js/auth.js"></script>
-</body>
   <script>
-    if (document.getElementById('form-reset')) {
-document.getElementById('form-reset').addEventListener('submit', function(e) {
-e.preventDefault();
-alert('Link reset telah dikirim (simulasi).');
-window.location.href = 'login.html';
-});
-}
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".reset-form");
+        const email = form.querySelector("input[name='email']");
+        const button = form.querySelector(".main-btn");
+
+        form.addEventListener("submit", function (e) {
+            if (email.value.trim() === "") {
+                e.preventDefault();
+                alert("Email tidak boleh kosong.");
+                return;
+            }
+
+            button.disabled = true;
+            button.textContent = "Mengirim...";
+        });
+    });
   </script>
+
+</body>
 </html>
