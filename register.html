@@ -17,12 +17,12 @@
     <img src="img/logo digiread.png" class="logo-img" alt="DigiRead Logo">
   </div>
 
-  <form class="register-form" action="#" method="GET">
+  <form class="register-form" id="registerForm">
     <h3 class="form-title">Daftar Akun</h3>
 
-    <input type="text" name="email" placeholder="Email / No. Telepon" required>
-    <input type="text" name="username" placeholder="Nama Pengguna" required>
-    <input type="password" name="password" placeholder="Kata Sandi" required>
+    <input type="text" id="email" placeholder="Email / No. Telepon" required>
+    <input type="text" id="username" placeholder="Nama Pengguna" required>
+    <input type="password" id="password" placeholder="Kata Sandi" required>
 
     <button type="submit" class="main-btn">Daftar</button>
 
@@ -37,83 +37,45 @@
     </div>
   </form>
 
- <script>
-  // Toggle password visibility
-  const eyeOpen = document.getElementById('eyeOpen');
-  const eyeClosed = document.getElementById('eyeClosed');
 
-  document.getElementById('togglePassword').addEventListener('click', function (e) {
+<script>
+
+  document.getElementById("registerForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    const passwordField = document.getElementById('password');
 
-    if (passwordField.type === 'password') {
-      passwordField.type = 'text';
-      eyeOpen.style.display = 'none';
-      eyeClosed.style.display = '';
-    } else {
-      passwordField.type = 'password';
-      eyeOpen.style.display = '';
-      eyeClosed.style.display = 'none';
-    }
-  });
-
-  // Register process using localStorage
-  document.getElementById('signinBtn').addEventListener('click', function () {
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const email = document.getElementById("email").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
     // Validasi username
-    if (username.length < 8 || username.length > 20) {
-      alert('Username harus terdiri dari 8 - 20 karakter!');
-      document.getElementById('username').focus();
+    if (username.length < 4) {
+      alert("Nama pengguna minimal 4 karakter.");
       return;
     }
 
     // Validasi password
-    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-    if (!passwordRegex.test(password)) {
-      alert('Password minimal 8 karakter, mengandung huruf besar, angka, dan simbol!');
-      document.getElementById('password').focus();
+    if (password.length < 6) {
+      alert("Password minimal 6 karakter.");
       return;
     }
 
-    // Validasi email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Format email tidak valid!');
-      document.getElementById('email').focus();
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const exist = users.find(u => u.username === username || u.email === email);
+
+    if (exist) {
+      alert("Email atau nama pengguna sudah dipakai.");
       return;
     }
 
-    // Ambil data akun sebelumnya
-    let users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push({ email, username, password });
+    localStorage.setItem("users", JSON.stringify(users));
 
-    // Cek apakah username atau email sudah ada
-    const existingUser = users.find(
-      user => user.username === username || user.email === email
-    );
-
-    if (existingUser) {
-      alert('Username atau email sudah digunakan!');
-      return;
-    }
-
-    // Simpan akun baru
-    const newUser = {
-      username: username,
-      password: password, // plaintext, untuk project sekolah masih oke
-      email: email
-    };
-
-    users.push(newUser);
-    localStorage.setItem('users', JSON.stringify(users));
-
-    alert('Akun berhasil dibuat!');
-    window.location.href = 'sign in.html';
+    alert("Akun berhasil dibuat.");
+    window.location.href = "login.html";
   });
-</script>
 
+</script>
 
 </body>
 </html>
