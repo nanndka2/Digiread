@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login — DigiRead</title>
-  <link rel="stylesheet" href="css/login.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiRead — Masuk</title>
+  <link rel="stylesheet" href="css/login.css">
 </head>
+
 <body>
+
   <div class="top-bar">
     <button class="back-arrow" onclick="history.back()">&#8592;</button>
   </div>
 
   <div class="logo-section">
-    <img src="img/logo digiread.png" class="logo-img" />
+    <img src="img/logo-digiread.png" class="logo-img" alt="DigiRead Logo">
   </div>
 
-  <form class="main-form" id="form-login">
+  <form class="login-form" action="api/login.php" method="POST">
     <h3 class="form-title">Masuk</h3>
-    <input type="text" id="login-email" placeholder="No Telp / Email" required>
-    <input type="password" id="login-password" placeholder="Kata Sandi" required>
 
-    <div class="forgot-row"><a href="reset.html" class="forgot-link">Lupa Sandi?</a></div>
+    <input type="text" name="email" placeholder="Email / No. Telepon" required>
+    <input type="password" name="password" placeholder="Kata Sandi" required>
+
+    <div class="forgot-row">
+      <a href="reset.html" class="forgot-link">Lupa kata sandi?</a>
+    </div>
+
+    <button type="submit" class="main-btn">Masuk</button>
 
     <div class="social-row">
       <button type="button" class="social-btn"><img src="img/google.png"></button>
       <button type="button" class="social-btn"><img src="img/facebook.png"></button>
     </div>
 
-    <button type="submit" class="main-btn">Masuk</button>
-    <div class="register-row">Belum punya akun? <a href="register.html" class="register-link">Daftar</a></div>
+    <div class="register-row">
+      Belum punya akun?
+      <a href="register.html" class="register-link">Daftar</a>
+    </div>
   </form>
 
-  <script src="js/auth.js"></script>
-</body>
-  <script>if (document.getElementById('form-login')) {
-document.getElementById('form-login').addEventListener('submit', function(e) {
-e.preventDefault();
-const email = document.getElementById('login-email').value;
-const password = document.getElementById('login-password').value;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".login-form");
+        const email = form.querySelector("input[name='email']");
+        const password = form.querySelector("input[name='password']");
+        const button = form.querySelector(".main-btn");
 
+        form.addEventListener("submit", function (e) {
+            if (email.value.trim() === "" || password.value.trim() === "") {
+                e.preventDefault();
+                alert("Email dan password tidak boleh kosong.");
+                return;
+            }
 
-const user = JSON.parse(localStorage.getItem('digiread_user'));
-
-
-if (!user) {
-alert('Akun tidak ditemukan. Daftar terlebih dahulu.');
-return;
-}
-
-
-if (email === user.email && password === user.password) {
-alert('Login berhasil.');
-window.location.href = 'dashboard.html';
-} else {
-alert('Email atau kata sandi salah.');
-}
-});
-}
+            button.disabled = true;
+            button.textContent = "Memproses...";
+        });
+    });
   </script>
+
+</body>
 </html>
